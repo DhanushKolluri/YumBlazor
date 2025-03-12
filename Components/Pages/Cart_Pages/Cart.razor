@@ -34,12 +34,12 @@ else
 										@cartItem.Product.Name
 									</h4>
 									<h4>
-										@cartItem.Product.Price.ToString("C", CultureInfo.GetCultureInfo("en-us"))
+										@cartItem.Product.Price.ToString("C", CultureInfo.GetCultureInfo("en-in"))
 									</h4>
 								</div>
 								<div class="flex-fill">
 									<h4 class="text-danger">
-										@((cartItem.Product.Price * cartItem.Count).ToString("C", CultureInfo.GetCultureInfo("en-us")))
+										@((cartItem.Product.Price * cartItem.Count).ToString("C", CultureInfo.GetCultureInfo("en-in")))
 									</h4>
 								</div>
 								<div class="d-flex justify-content-between align-items-center">
@@ -91,7 +91,7 @@ else
 						<div class="card mt-4 bg-light">
 							<div class="card-body">
 								<h4>
-									Grand Total: @OrderHeader.OrderTotal.ToString("C", CultureInfo.GetCultureInfo("en-us"))
+									Grand Total: @OrderHeader.OrderTotal.ToString("C", CultureInfo.GetCultureInfo("en-in"))
 								</h4>
 								<h4>
 									No. of Items: @TotalItems
@@ -141,6 +141,7 @@ else
 		var user = authState.User;
 		OrderHeader.Email = user.FindFirst(u => u.Type.Contains("email"))?.Value;
 		OrderHeader.UserId = user.FindFirst(u => u.Type.Contains("nameidentifier"))?.Value;
+		OrderHeader.Status = SD.StatusPending;
 	}
 
 	private async Task LoadCart()
