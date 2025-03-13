@@ -10,4 +10,3 @@ namespace YumBlazor.Repository.IRepository
         public Task<int> GetTotalCartCartCountAsync(string? userId);
     }
 }
-}
