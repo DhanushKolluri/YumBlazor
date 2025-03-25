@@ -146,3 +146,7 @@ span.nav-link.active {
     background: transparent !important;
 }
 
+.page {
+    flex-grow: 1; /* Allow main content to take up remaining space */
+}
+
